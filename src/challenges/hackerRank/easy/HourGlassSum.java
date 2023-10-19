@@ -38,7 +38,7 @@ public class HourGlassSum {
 		 * 
 		 */
 		
-		System.out.println(hourGlassSum(arr));
+		System.out.println("max sum of the numbers of hour glasses = "+hourGlassSum(arr));
 
 	}
 	
