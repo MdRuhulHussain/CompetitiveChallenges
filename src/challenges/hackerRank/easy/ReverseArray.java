@@ -2,6 +2,9 @@ package challenges.hackerRank.easy;
 
 import java.util.Scanner;
 
+/*
+ * Write a function to reverse the elements of array
+ */
 public class ReverseArray {
 	
 	public static void main(String[] args) {
