@@ -17,7 +17,7 @@ public class HourGlassSum {
 //			}
 //		}
 		
-		
+		//Uncomment above code to take inputs from user, otherwise use below inputs
 		int[][] arr = 
 			 {{-9,-9,-9,1,1,1}
 			 ,{0,-9,0,4,3,2}
@@ -54,7 +54,6 @@ public class HourGlassSum {
                        if(k==i+1 && (l==j || l==j+2))
                         continue;
                        hoursum += arr[k][l];
-                       //System.out.println(hoursum);
                    }
                 }
                 
