@@ -18,8 +18,6 @@ public class HourGlassSum {
 //		}
 		
 
-		//Uncomment above code to take inputs from user and comment the below array initialization, otherwise use below inputs
-		//comment to check if the file is updating or not
 		int[][] arr = 
 			 {{-9,-9,-9,1,1,1}
 			 ,{0,-9,0,4,3,2}
