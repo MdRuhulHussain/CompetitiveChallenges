@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * Perform a d times left rotation on the given array, left rotation of a 1-D array is shifting
+ * array element to left side, for given d value, this shifting should be d-times.
+ * e.g for d = 3 and the array = {1,2,3,4,5}. After d left rotation, the resultant array would be
+ * {4,5,1,2,3}. Constraints : 0 <= d <= arr.length
+ */
 public class LeftRotateArray {
 	
 public static void main(String[] args) {
