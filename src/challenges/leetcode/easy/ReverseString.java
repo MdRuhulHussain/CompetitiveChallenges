@@ -1,5 +1,11 @@
 package challenges.leetcode.easy;
 
+/*
+ * Reverse the words of a string for example the string=> "Let's take LeetCode contest"
+ * needs to returned as "s'teL ekat edoCteeL tsetnoc"
+ * Three solutions are given below - using split method, using loop by iterating through characters
+ * and the optimized solution is by optimizing the running of internal loop
+ */
 public class ReverseString {
 	
 	public static void main(String args[]) {
@@ -9,6 +15,7 @@ public class ReverseString {
 		
 		System.out.println(reverseWordsBasicApproach(s));
 		
+		System.out.println(reverseWordsOptimizedApproach(s));
 	}
 	
 	public static String reverseWordsUsingSplit(String s) {
@@ -40,6 +47,35 @@ public class ReverseString {
         return res;
 	}
 	
-	
+	public static String reverseWordsOptimizedApproach(String s) {
+		String res = "";
+		char[] arr = s.toCharArray();
+        int lastCharIndex = 0;
+        int i =0;
+        for(i = 0; i< arr.length; i++){
+            if(arr[i] == ' '){
+                int j = i-1;
+                while(j>lastCharIndex){
+                    char temp = arr[j];
+                    arr[j] = arr[lastCharIndex];
+                    arr[lastCharIndex] = temp;
+                    j--;
+                    lastCharIndex++;
+                }
+                lastCharIndex = i+1;
+
+            }
+        }
+        int j = i-1;
+        while(j>lastCharIndex){
+            char temp = arr[j];
+            arr[j] = arr[lastCharIndex];
+            arr[lastCharIndex] = temp;
+            j--;
+            lastCharIndex++;
+        }
+        res = String.valueOf(arr);
+        return res;
+	}
 
 }
