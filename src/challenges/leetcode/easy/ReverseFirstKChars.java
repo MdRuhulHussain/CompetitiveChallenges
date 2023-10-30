@@ -1,5 +1,9 @@
 package challenges.leetcode.easy;
 
+/*
+ * Reverse first k characters of string for every 2k characters. the input and output should be
+ * input = "abcdefg" output = "bacdfeg"
+ */
 public class ReverseFirstKChars {
 
 	public static void main(String[] args) {
