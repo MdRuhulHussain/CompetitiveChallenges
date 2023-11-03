@@ -1,5 +1,9 @@
 package challenges.leetcode.easy;
 
+/*
+ * Add the digits of a number untill you are left with single digit
+ * e.g - 457 => 4+5+7 => 16 => 7
+ */
 public class AddDigitsOfNum {
 	
 	public static void main(String args[]) {
