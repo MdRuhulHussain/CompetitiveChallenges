@@ -3,12 +3,19 @@ package challenges.leetcode.easy.medium;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Print words vertically for a given string i.e return a list of string, presenting the given string vertically
+ * e.g : String = "HOW ARE YOU", The output should be ["HAY", "ORO", "WEU"].
+ * Note: trailing spaces need to be removed - e.g String = "TO BE OR NOT TO BE", The output
+ * should be ["TBONTB", "OEROOE", "   T"]
+ * 
+ */
 public class PrintWordsVertically {
 
 	public static void main(String[] args) {
 		String s = "CONTEST IS COMING";
 		List<String> result = printWordsVertically(s);
-		result.forEach(x -> System.out.print(x+","));
+		result.forEach(x -> System.out.print("\""+x+"\","));
 	}
 	
 	public static List<String> printWordsVertically(String s){
