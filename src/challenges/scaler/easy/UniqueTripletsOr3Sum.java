@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Given an array of integer having positive and negative numbers and the target is given. 
+ * Find the unique pairs of 3 numbers which on summing give the target.
+ * i.e Input = {4,2,-3,1,-2,8,6}, target =  6
+ * Output (Unique triplets) = {-3,1,8}, {2,-2,6}
+ */
 public class UniqueTripletsOr3Sum {
 	
 	public static void main(String args[]) {
