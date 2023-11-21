@@ -1,5 +1,8 @@
 package challenges.leetcode.easy;
 
+/*
+ * Make String equals leetcode easy
+ */
 public class MakeStringsEqual {
 
 	public static void main(String[] args) {
