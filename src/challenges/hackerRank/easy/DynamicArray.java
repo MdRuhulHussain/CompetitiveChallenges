@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Given an integer n (the size of the dynamic array) and and the list of queries (integer List)
+ * There are  types of queries, given as an array of strings for you to parse: 
+ * Query: 1 x y
+ * 		Let idx = ((x xor lastAnswer)%n), and then Append the integer y to arr[idx].
+ * Query: 2 x y
+ * 		Let idx = ((x xor lastAnswer)%n), and then Assign the value arr[idx][y%size(arr[idx])] to lastAnswer.
+ * 		Store the new value of lastAnswer to the answer array
+ */
 public class DynamicArray {
 	
 	public static void main(String args[]) {
