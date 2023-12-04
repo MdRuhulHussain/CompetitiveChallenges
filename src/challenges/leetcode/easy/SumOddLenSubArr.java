@@ -14,8 +14,11 @@ public class SumOddLenSubArr {
 	public static void main(String args[]) {
 		int[] arr = {1,4,2,5,3};
 		System.out.println(sumOddLengthSubArraysNaiveSol(arr));
+		
+		System.out.println(sumOddLengthSubArraysOptimizedSol(arr));
 	}
 	
+	//Naive Solution - using 3 loops of len -> n/2, n-i, i
 	public static int sumOddLengthSubArraysNaiveSol(int[] arr) {
 		int sum = 0;
 		 for(int i=1;i<=arr.length;i+=2){
@@ -28,6 +31,17 @@ public class SumOddLenSubArr {
 		 return sum;
 	}
 	
-	
+	//Optimized Solution - using single loop
+	//Identifying each elements in all possible subArrays.
+	//consider subarray that contains arr[i], left ride : 0 to i => (i+1) choices, 
+	//right ride : 0 to n-1-i, => (n-i) choices
+	//So, a total of (i+1)*(n-i) => k(say) choices, for odd => k+1/2 => ((i+1)*(n-i)+1)/2
+	public static int sumOddLengthSubArraysOptimizedSol(int[] arr) {
+		int sum = 0;
+		for(int i=0;i<arr.length;i++) {
+			sum += ((i+1)*(arr.length-i)+1)/2*arr[i];
+		}
+		return sum;
+	}
 
 }
