@@ -17,6 +17,7 @@ public class SubArrayDiv {
 		int d = 5, m = 2;
 		List<Integer> s = Arrays.asList(2,3,2,2,1,0,5,4,1,7,6);
 		System.out.println(birthday(s, d, m));
+		System.out.println(birthdayOptimizedApproach(s, d, m));
 	}
 	
 	public static int birthday(List<Integer> s, int d, int m) {
@@ -33,6 +34,22 @@ public class SubArrayDiv {
                 }
             }
             if(sum==d && j-i == m)
+                count++;
+        }
+        return count;
+	}
+	
+	public static int birthdayOptimizedApproach(List<Integer> s, int d, int m) {
+		int count = 0;
+        int sum=0;
+        for(int i=0;i<s.size();i++){
+            sum += s.get(i);
+            if(i>=m){
+                sum-=s.get(i-m);
+                if(sum==d)
+                    count++;
+            }
+            if(i==m-1 && sum==d)
                 count++;
         }
         return count;
