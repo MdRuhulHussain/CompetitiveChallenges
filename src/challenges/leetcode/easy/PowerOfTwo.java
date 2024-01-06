@@ -10,6 +10,9 @@ public class PowerOfTwo {
 	
 	public static void main(String args[]) {
 		System.out.println(isPowerOfTwoUsingLoop(8));
+		
+		
+		System.out.println(isPowerOfTwoWithoutLoopAndRecursion(16));
 	}
 	
 	public static boolean isPowerOfTwoUsingLoop(int n) {
@@ -22,6 +25,11 @@ public class PowerOfTwo {
                 return false;
         }
         return true;
+	}
+	
+	//optimized solution
+	public static boolean isPowerOfTwoWithoutLoopAndRecursion(int n) {
+		return n < 1 ? false : (n & (n-1)) == 0 ? true : false;
 	}
 
 }
