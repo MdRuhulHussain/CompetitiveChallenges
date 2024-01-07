@@ -11,6 +11,8 @@ public class PowerOfThree {
 	public static void main(String args[]) {
 		int n = 9;
 		System.out.println(isPowerOfThree(n));
+		
+		System.out.println(isPowerOfThreeWithoutLoopOrRecursion(n));
 	}
 	
 	public static boolean isPowerOfThree(int n) {
@@ -24,5 +26,14 @@ public class PowerOfThree {
         }
         return true;
     }
+	
+	public static boolean isPowerOfThreeWithoutLoopOrRecursion(int n) {
+		if(n<1)
+            return false;
+        double m = Math.log10(n)/Math.log10(3);
+        if(Math.floor(m)==m)
+            return true;
+        return false;
+	}
 
 }
