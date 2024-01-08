@@ -13,6 +13,8 @@ public class PowerOfFour {
 		System.out.println(isPowerOfFour(n));
 		
 		System.out.println(isPowerOfFourWithoutLoopAndRecursionSol(n));
+		
+		System.out.println(isPowerOfFourWithoutLoopAndRecursionSol2(n));
 	}
 	
 	public static boolean isPowerOfFour(int n) {
@@ -28,6 +30,11 @@ public class PowerOfFour {
 	
 	public static boolean isPowerOfFourWithoutLoopAndRecursionSol(int n) {
 		return n < 1 ? false : ((n & (n-1)) == 0 && (n-1)%3==0) ? true : false;
+	}
+	
+	public static boolean isPowerOfFourWithoutLoopAndRecursionSol2(int n) {
+		int mask = 0b01010101010101010101010101010101;
+		return n < 1 ? false : ((n & (n-1)) ==0 && (n & mask) == n);
 	}
 
 }
