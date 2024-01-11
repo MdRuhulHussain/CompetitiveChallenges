@@ -2,9 +2,12 @@ package challenges.leetcode.easy;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
+ * https://leetcode.com/problems/intersection-of-multiple-arrays/description/
  * Given a 2D integer array nums where nums[i] is a non-empty array of distinct positive integers, return the 
  * list of integers that are present in each array of nums sorted in ascending order.
  * Example : Input: nums = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]]
@@ -19,6 +22,14 @@ public class IntersectionOfMultipleArrays {
 		List<Integer> res = intersection(nums);
 		for(int n : res)
 			System.out.print(n+" ");
+		
+		
+		System.out.println("optimized solution call below");
+		res = intersectionOptimizedSol(nums);
+		for(int n : res)
+			System.out.print(n+" ");
+		
+		
 	}
 	
 	public static List<Integer> intersection(int[][] nums) {
@@ -48,6 +59,25 @@ public class IntersectionOfMultipleArrays {
         }
         Collections.sort(intersectionArr);
         return intersectionArr;
+    }
+	
+	public static List<Integer> intersectionOptimizedSol(int[][] nums) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            for(int j=0;j<nums[i].length;j++){
+                if(freq.containsKey(nums[i][j]))
+                    freq.put(nums[i][j], (freq.get(nums[i][j])+1));
+                else
+                    freq.put(nums[i][j], 1);
+            }
+        }
+        List<Integer> intersectionList = new ArrayList<>();
+        for(int key : freq.keySet()){   
+            if(freq.get(key)==nums.length)
+                intersectionList.add(key);
+        }
+        Collections.sort(intersectionList);
+        return intersectionList;
     }
 
 }
