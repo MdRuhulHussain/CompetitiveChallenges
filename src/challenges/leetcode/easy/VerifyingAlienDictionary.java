@@ -3,10 +3,18 @@ package challenges.leetcode.easy;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * In an alien language, surprisingly, they also use English lowercase letters, but possibly in a different 
+ * order. The order of the alphabet is some permutation of lowercase letters.
+ * Given a sequence of words written in the alien language, and the order of the alphabet, return true if and 
+ * only if the given words are sorted lexicographically in this alien language.
+ * Example : Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"; Output : true
+ * Explanation: As 'h' comes before 'l' in this language, then the sequence is sorted.
+ */
 public class VerifyingAlienDictionary {
 	
 	public static void main(String args[]) {
-		String[] words = {"word","world","row"};
+		String[] words = {"word", "words", "world","row"};
 		String order = "worldabcefghijkmnpqstuvxyz";
 		System.out.println(isAlienSorted(words, order));
 	}
