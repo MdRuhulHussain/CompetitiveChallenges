@@ -32,11 +32,11 @@ public class FairCandySwap {
         for(int n : bobSizes)
             bobSum+=n;
         Arrays.sort(bobSizes);
-        int mid = aliceSum+(bobSum-aliceSum)/2;
-        for(int n : aliceSizes){
-            int a = Arrays.binarySearch(bobSizes, (bobSum+n)-mid);
-            if(a>=0)
-                return new int[]{n, bobSizes[a]};
+        int equalCandy = aliceSum+(bobSum-aliceSum)/2;
+        for(int iCount : aliceSizes){
+            int found = Arrays.binarySearch(bobSizes, (bobSum+iCount)-equalCandy);
+            if(found>=0)
+                return new int[]{iCount, bobSizes[found]};
         }
         return new int[]{-1,-1};
     }
