@@ -23,7 +23,7 @@ import java.util.Stack;
  * Now, f1 ends at 10 secs so f1 = [7,10]=> 4
  * Now, f0 resumes at 11 and end at 11, so, f0 += [11,11] (i.e 5+1=6). 
  * Hence execution time of f0, f1 and f2 are 6, 4 and 2 seconds respectively.
- *
+ * Output = 6,4,2
  */
 public class ExecutionTime {
 	
@@ -36,7 +36,7 @@ public class ExecutionTime {
 		logs.add("2:start:8");
 		logs.add("2:end:10");
 		logs.add("0:end:12");
-		int timeTaken[] = getTotalExecutionTime(n, logs);
+		int timeTaken[] = getTotalExecutionTime(n, logs); // the output should be -. 6,4,3
 		for(int time : timeTaken)
 			System.out.print(time+" ");
 	}
