@@ -19,6 +19,7 @@ public class FindTownJudge {
 		int[][] trust = {{1,3},{2,3},{1,4},{2,4},{3,4}};
 		int n =  4;
 		System.out.println(findJudge(n, trust));
+		System.out.println(findJudge(n, trust));
 	}
 	
 	public static int findJudge(int n, int[][] trust) {
@@ -45,4 +46,30 @@ public class FindTownJudge {
         }
         return -1;
     }
+	
+	public static int findJudgeAnotherSol(int n, int[][] trust) {
+		 if(n==1)
+             return 1;
+         for(int i=0;i<trust.length;i++){
+             boolean flag = true;
+             for(int j=0;j<trust.length;j++){
+                 if(trust[j][0]==trust[i][1]){
+                     flag = false;
+                     break;
+                 }
+             }
+             if(flag){
+                 int temp = trust[i][1];
+                 int count=1;
+                 i++;
+                 for(;i<trust.length;i++){
+                     if(trust[i][1]==temp)
+                         count++;
+                 }
+                 if(count==n-1)
+                     return temp;
+             }
+         }
+         return -1;
+	}
 }
