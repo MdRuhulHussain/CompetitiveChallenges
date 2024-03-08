@@ -14,6 +14,7 @@ public class MaximumOddBinaryNumber {
 	public static void main(String args[]) {
 		String s = "01000110100";
 		System.out.println(maximumOddBinaryNumber(s));
+		System.out.println(maximumOddBinaryNumber(s));
 	}
 	
 	 public static String maximumOddBinaryNumber(String s) {
@@ -32,5 +33,23 @@ public class MaximumOddBinaryNumber {
          res.append('1');
          return res.toString();
      }
+	 
+	 public String maximumOddBinaryNumberOptimized(String s) {
+			char[] res = new char[s.length()];
+			int x=0, y=s.length()-1;
+			for(int i=0;i<s.length();i++){
+				if(s.charAt(i)=='1'){
+					res[x]='1';
+					x++;
+				}
+				else{
+					res[y]='0';
+					y--;
+				}
+			}
+			res[y]='0';
+			res[res.length-1]='1';
+			return String.valueOf(res);
+		}
 
 }
