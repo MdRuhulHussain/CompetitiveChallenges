@@ -1,5 +1,7 @@
 package challenges.leetcode.easy;
 
+import java.util.Arrays;
+
 /*
  * Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
  * Example 1: Input: nums = [-4,-1,0,3,10]; Output: [0,1,9,16,100]
@@ -12,6 +14,12 @@ public class SquaresOfSortedArr {
 		int[] nums = { -7,-3,2,3,11};
 		sortedSquares(nums);
 		for(int num : nums)
+			System.out.print(num+" ");
+		
+		System.out.println();
+		int[] nums2 = { -7,-3,2,3,11};
+		sortedSquaresLilOptimized(nums2);
+		for(int num : nums2)
 			System.out.print(num+" ");
 	}
 	
@@ -30,5 +38,14 @@ public class SquaresOfSortedArr {
         }
         return nums;
     }
+	
+	 public static int[] sortedSquaresLilOptimized(int[] nums) {
+         int j = 0, temp = 0;
+         for(int i=0;i<nums.length;i++){
+             nums[i] = nums[i]*nums[i];
+         }
+         Arrays.sort(nums);
+         return nums;
+     }
 
 }
