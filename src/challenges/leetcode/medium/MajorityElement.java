@@ -14,6 +14,8 @@ public class MajorityElement {
 	public static void main(String args[]) {
 		int[] nums = {2,2,1,1,1,2,2};
 		System.out.println(majorityElement(nums));
+		
+		System.out.println(majorityElement(nums));
 	}
 	
 	public static int majorityElement(int[] nums) {
@@ -30,6 +32,19 @@ public class MajorityElement {
              }
          }
          return majority;
+	}
+	
+	public int majorityElementOptimized(int[] nums) {
+        int count = 0, majority = 0;
+        for(int num : nums){
+            if(count==0)
+                majority = num;
+            if(majority == num)
+                count++;
+            else
+                count--; 
+        }
+        return majority;
 	}
 
 }
