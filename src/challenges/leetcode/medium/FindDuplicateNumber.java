@@ -16,6 +16,8 @@ public class FindDuplicateNumber {
 	public static void main(String args[]) {
 		int[] nums = {2,5,3,3,3,4,8};
 		System.out.println(findDuplicate(nums));
+		
+		System.out.println(findDuplicateOptimized(nums));
 	}
 	
 	public static int findDuplicate(int[] nums) {
@@ -28,6 +30,21 @@ public class FindDuplicateNumber {
          }
          return 0;
     }
+	
+	public static int findDuplicateOptimized(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while(slow!=fast);
+        fast=nums[0];
+        while(slow!=fast){
+            slow=nums[slow];
+            fast=nums[fast];
+        }
+        return slow;
+	}
 	
 
 }
