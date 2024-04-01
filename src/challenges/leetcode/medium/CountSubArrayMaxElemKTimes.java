@@ -67,6 +67,8 @@ public class CountSubArrayMaxElemKTimes {
 		int[] nums = {1,2,3,3,2,3,3,2,1,3};
 		int k = 3;
 		System.out.println(countSubArrays(nums, k));
+		
+		System.out.println(countSubarraysOptimizedSol(nums, k));
 	}
 	
 	public static long countSubArrays(int[] nums, int k) {
@@ -90,5 +92,36 @@ public class CountSubArrayMaxElemKTimes {
          }
          return count;
 	}
+	
+	public static long countSubarraysOptimizedSol(int[] nums, int k) {
+        int max = 0;
+        long count = 0;
+        for(int num : nums){
+            if(num>max)
+                max=num;
+        }
+        int i=0;
+        for(i=0;i<nums.length;i++){
+            if(max==nums[i])
+                count++;
+            if(count==k)
+                break;
+        }
+        if(count!=k)
+            return 0;
+        count = 0;
+        count+=nums.length-i;
+        for(int j=1;j<=nums.length-k;j++){
+            if(nums[j-1]==max){
+                i++;
+                while(i<nums.length-1 && nums[i]!=max){
+                    i++;
+                }
+            }
+            if(i<nums.length && nums[i]==max)
+                count += nums.length-i;
+        }
+        return count;
+    }
 
 }
